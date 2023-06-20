@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, Col, Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Days() {
     const [holidays, setHolidays] = useState([]);
@@ -21,22 +23,33 @@ function Days() {
         fetchHolidays();
     }, []);
 
-    // API'den gelen tatil verilerini kullanarak bir şeyler yapabilirsiniz
+    const sliderStyle = {
+        display: 'flex',
+        flexWrap: 'nowrap',
+        overflowX: 'auto',
+        scrollBehavior: 'smooth',
+        WebkitOverflowScrolling: 'touch',
+
+    };
+    const textim = {
+        textAlign: "center"
+    }
 
     return (
-        <Row>
+        <Row style={sliderStyle}>
 
 
 
             {/* Tatil verilerini kullanarak JSX içinde istediğiniz şekilde gösterim yapabilirsiniz */}
             {holidays.map(holiday => (
 
-                <Col lg={3} >
-                    <div key={holiday.date}>
-                    <span>{holiday.date}</span>
-                    <span>{holiday.name}</span>
+                <Col lg={2} style={textim}>
+                    <div>
+                        <div key={holiday.date}>
+                            <h4>{holiday.date}</h4>
+                            <h6>{holiday.name}</h6>
+                        </div>
                     </div>
-                    
                 </Col>
 
 
