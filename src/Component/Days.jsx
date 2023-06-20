@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import TodoAppim from './TodoAppim';
 
 function Days() {
+
+    
     const [holidays, setHolidays] = useState([]);
+    const [selectedHoliday, setSelectedHoliday] = useState(null);
 
     useEffect(() => {
         const fetchHolidays = async () => {
@@ -31,29 +34,42 @@ function Days() {
         WebkitOverflowScrolling: 'touch',
 
     };
-    
+
+    const tikla = {
+
+    }
 
     return (
-        <Row style={sliderStyle} className='topRow'>
+        <div>
+
+            <Row style={sliderStyle} className='topRow'>
 
 
+                {holidays.map(holiday => (
 
-            {/* Tatil verilerini kullanarak JSX içinde istediğiniz şekilde gösterim yapabilirsiniz */}
-            {holidays.map(holiday => (
+                    <Col lg={2} className='text' onClick={tikla}>
 
-                <Col lg={2} className='text'>
+                        <div key={holiday.date}>
+                            <h4>{holiday.date}</h4>
+                            <h6>{holiday.name}</h6>
+                        </div>
 
-                    <div key={holiday.date}>
-                        <h4>{holiday.date}</h4>
-                        <h6>{holiday.name}</h6>
-                    </div>
+                    </Col>
 
+
+                ))}
+
+            </Row>
+
+            <Row className='centerRow'>
+                <Col lg={6}>
+                    <TodoAppim/>
                 </Col>
+                
+            </Row>
+        </div>
 
 
-            ))}
-
-        </Row>
     );
 };
 

@@ -8,6 +8,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     text-align: center;
     margin-left: 2%;
+    cursor: pointer;
    
 }
 
@@ -18,4 +19,15 @@
 
 .topRow{
     padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.centerRow{
+    justify-content: center;
+}
+
+.note{
+    text-align: center;
+    border: 1px solid red;
 }
