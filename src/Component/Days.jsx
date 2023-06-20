@@ -31,9 +31,12 @@ function Days() {
             {/* Tatil verilerini kullanarak JSX içinde istediğiniz şekilde gösterim yapabilirsiniz */}
             {holidays.map(holiday => (
 
-                <Col lg={3} key={holiday.date}>
+                <Col lg={3} >
+                    <div key={holiday.date}>
                     <span>{holiday.date}</span>
                     <span>{holiday.name}</span>
+                    </div>
+                    
                 </Col>
 
 
