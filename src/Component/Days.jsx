@@ -62,7 +62,7 @@ function Days() {
             </Row>
 
             <Row className='centerRow'>
-                <Col lg={6}>
+                <Col lg={6} className='centerCol'>
                     <TodoAppim/>
                 </Col>
                 
