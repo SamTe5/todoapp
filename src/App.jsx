@@ -8,7 +8,7 @@ import Calendar from './Component/Calendar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App all">
       <Navbars/>
       <Calendar/>
       

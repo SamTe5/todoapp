@@ -6,7 +6,7 @@ function Calendar() {
   return (
     <div>
         <Container>
-            <Row>
+            <Row className='topRow'>
                 <CalendarItem/>
             </Row>
         </Container>

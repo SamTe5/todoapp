@@ -4,3 +4,18 @@
     box-sizing: border-box;
 }
 
+.text{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    margin-left: 2%;
+   
+}
+
+.all{
+    height: 100vh;
+    width: 100%;
+}
+
+.topRow{
+    padding-top: 2%;
+}

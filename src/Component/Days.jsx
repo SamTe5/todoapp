@@ -31,25 +31,23 @@ function Days() {
         WebkitOverflowScrolling: 'touch',
 
     };
-    const textim = {
-        textAlign: "center"
-    }
+    
 
     return (
-        <Row style={sliderStyle}>
+        <Row style={sliderStyle} className='topRow'>
 
 
 
             {/* Tatil verilerini kullanarak JSX içinde istediğiniz şekilde gösterim yapabilirsiniz */}
             {holidays.map(holiday => (
 
-                <Col lg={2} style={textim}>
-                    <div>
-                        <div key={holiday.date}>
-                            <h4>{holiday.date}</h4>
-                            <h6>{holiday.name}</h6>
-                        </div>
+                <Col lg={2} className='text'>
+
+                    <div key={holiday.date}>
+                        <h4>{holiday.date}</h4>
+                        <h6>{holiday.name}</h6>
                     </div>
+
                 </Col>
 
 
