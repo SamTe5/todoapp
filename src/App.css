@@ -63,5 +63,11 @@ img{
     max-height: 0;
     transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
   }
-  
+  .todo{
+    padding-left: 5%;
+  }
+
+  .todos{
+    text-align: left;
+  }
 
