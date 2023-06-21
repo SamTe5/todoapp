@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/esm/Col';
+import {  Row } from 'react-bootstrap';
+
 
 function TodoAppim() {
   const [inputData, setInputData] = useState("")
@@ -23,7 +26,7 @@ function TodoAppim() {
     setTodos(updatedTodos);
     localStorage.setItem("isler", JSON.stringify(updatedTodos));
   };
-  
+
 
   useEffect(() => {
     let gelenTodos = JSON.parse(localStorage.getItem("isler"))
@@ -31,12 +34,13 @@ function TodoAppim() {
       setTodos(gelenTodos)
     }
   }, [])
-  
+
 
 
 
   return (
-    <div className='note'>To-Do List
+    <div className='note'>
+      <h3>To-Do List</h3>
       <div className='noteContent'>
         <InputGroup className="my-3 px-5 " style={{ visibility: inputVisible ? 'visible' : 'hidden' }} onKeyUp={listen}>
           <Form.Control
@@ -48,18 +52,29 @@ function TodoAppim() {
           <Button variant="outline-secondary" id="button-addon2" onClick={add}>
             Add
           </Button>
-          {
-            todos.map((element,index) => {
-              return <div className='todos' key={index}>
-                  <div className='todo'>
-                      <h5>{element}</h5>
-                  </div>
-              </div>
-          })
-          }
+          
 
         </InputGroup>
         <img src='images/notepad.png' className='noteImg' onClick={resimTikla} />
+        <Row>
+          <Col>
+          {
+            todos.map((element, index) => {
+              return <div className='todos' key={index}>
+                <Row>
+                  <Col>
+                  <div className='todo'>
+                    <h5>{element}</h5>
+                  </div>
+                  </Col>
+                  
+                </Row>
+
+              </div>
+            })
+          }
+          </Col>
+        </Row>
 
 
       </div>
