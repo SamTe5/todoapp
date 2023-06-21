@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
 
 function TodoAppim() {
+
+  const [inputVisible, setInputVisible] =  useState(false)
+
+
+  const resimTikla =()=>{
+    setInputVisible(!inputVisible)
+  }
   return (
     <div className='note'>To-Do List
       <div className='noteContent'>
-        <img src='images/notepad.png' className='noteImg'/>
+        <InputGroup className="my-3 px-5 " style={{  visibility: inputVisible ? 'visible' : 'hidden'}}>
+          <Form.Control
+            placeholder="Please add a task"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          />
+          <Button variant="outline-secondary" id="button-addon2">
+            Add
+          </Button>
+        </InputGroup>
+        <img src='images/notepad.png' className='noteImg' onClick={resimTikla}/>
 
       </div>
 
