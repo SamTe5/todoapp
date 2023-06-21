@@ -59,7 +59,7 @@ function TodoAppim() {
                     <div className="todo">
                       <ul>
                         <li>
-                          <h4>{element}</h4>
+                          <h4 className='yazi'>{element}</h4>
                         </li>
                       </ul>
                     </div>
